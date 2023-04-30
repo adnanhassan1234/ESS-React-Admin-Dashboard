@@ -3,6 +3,8 @@ import Navbar from "../Navbar/Navbar";
 import "./dashboard.scss";
 import CardListData from "./CardListData";
 import DashboardBarChart from "./Barchart/DashboardBarChart";
+import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 const cardData = [
   {
@@ -47,7 +49,16 @@ const NotificationData = [
 ];
 
 function Dashboard() {
+
+  const navigate = useNavigate();
   const [item, setItem] = useState(cardData);
+
+  useEffect(() => {
+    if (!localStorage.getItem('accessToken')) {
+      navigate('/');
+    }
+  }, []);
+
 
   return (
     <div className="dashboard-container">

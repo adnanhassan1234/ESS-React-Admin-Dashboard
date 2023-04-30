@@ -2,9 +2,19 @@ import React from "react";
 import "./navbar.scss";
 import profile from '../../assets/image/hassan.jpg';
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 
 const Navbar = () => {
+
+  const navigate = useNavigate();
+
+  const removeToken = () => {
+    localStorage.removeItem('accessToken');
+    navigate('/');
+    window.location.reload();
+  }
+
   return (
     <>
       <nav className="navbar navbar-top padding-0 navbar-expand navbar-dashboard navbar-dark me-0 pe-0">
@@ -132,7 +142,7 @@ const Navbar = () => {
                   <div role="separator" className="dropdown-divider my-1"></div>
                   <a
                     className="dropdown-item d-flex align-items-center"
-                    href="#"
+                    href="#" onClick={removeToken}
                   >
                     <svg
                       className="dropdown-icon text-danger me-2"

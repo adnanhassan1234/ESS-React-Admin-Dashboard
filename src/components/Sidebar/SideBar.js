@@ -110,7 +110,7 @@ function SideBar() {
               </Link>
             </li>
             <li className="nav-item active mt-4">
-              <Link className="nav-link" to={{ pathname: "/" }}>
+              <Link className="nav-link" to={{ pathname: "/dashboard" }}>
                 <span className="sidebar-icon">
                   <i className="fa fa-home" aria-hidden="true"></i>
                 </span>
@@ -258,7 +258,7 @@ function SideBar() {
               >
                 <ul className="flex-column nav">
                   <li className="nav-item">
-                    <Link className="nav-link" to={{ pathname: "/sign-in" }}>
+                    <Link className="nav-link" to={{ pathname: "/" }}>
                       <span className="sidebar-text">Sign In</span>
                     </Link>
                   </li>

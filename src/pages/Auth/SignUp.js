@@ -1,24 +1,24 @@
 function SignUp() {
   return (
     <div className="signup-container my-5">
-      <section class="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
-        <div class="container">
+      <section className="vh-lg-100 mt-5 mt-lg-0 bg-soft d-flex align-items-center">
+        <div className="container">
           <div
-            class="row justify-content-center form-bg-image"
+            className="row justify-content-center form-bg-image"
             data-background-lg="assets/img/signin.svg"
           >
-            <div class="col-12 d-flex align-items-center justify-content-center">
-              <div class="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
-                <div class="text-center text-md-center mb-4 mt-md-0">
-                  <h1 class="mb-0 h3">Create Account</h1>
+            <div className="col-12 d-flex align-items-center justify-content-center">
+              <div className="bg-white shadow border-0 rounded border-light p-4 p-lg-5 w-100 fmxw-500">
+                <div className="text-center text-md-center mb-4 mt-md-0">
+                  <h1 className="mb-0 h3">Create Account</h1>
                 </div>
-                <form action="#" class="mt-4">
-                  <div class="form-group mb-4">
+                <form action="#" className="mt-4">
+                  <div className="form-group mb-4">
                     <label for="email">Your Email</label>
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1">
+                    <div className="input-group">
+                      <span className="input-group-text" id="basic-addon1">
                         <svg
-                          class="icon icon-xs text-gray-600"
+                          className="icon icon-xs text-gray-600"
                           fill="currentColor"
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,7 @@ function SignUp() {
                       </span>
                       <input
                         type="email"
-                        class="form-control"
+                        className="form-control"
                         placeholder="example@company.com"
                         id="email"
                         autofocus
@@ -37,13 +37,13 @@ function SignUp() {
                       />
                     </div>
                   </div>
-                  <div class="form-group">
-                    <div class="form-group mb-4">
+                  <div className="form-group">
+                    <div className="form-group mb-4">
                       <label for="password">Your Password</label>
-                      <div class="input-group">
-                        <span class="input-group-text" id="basic-addon2">
+                      <div className="input-group">
+                        <span className="input-group-text" id="basic-addon2">
                           <svg
-                            class="icon icon-xs text-gray-600"
+                            className="icon icon-xs text-gray-600"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
@@ -58,18 +58,18 @@ function SignUp() {
                         <input
                           type="password"
                           placeholder="Password"
-                          class="form-control"
+                          className="form-control"
                           id="password"
                           required
                         />
                       </div>
                     </div>
-                    <div class="form-group mb-4">
+                    <div className="form-group mb-4">
                       <label for="confirm_password">Confirm Password</label>
-                      <div class="input-group">
-                        <span class="input-group-text" id="basic-addon2">
+                      <div className="input-group">
+                        <span className="input-group-text" id="basic-addon2">
                           <svg
-                            class="icon icon-xs text-gray-600"
+                            className="icon icon-xs text-gray-600"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                             xmlns="http://www.w3.org/2000/svg"
@@ -84,50 +84,50 @@ function SignUp() {
                         <input
                           type="password"
                           placeholder="Confirm Password"
-                          class="form-control"
+                          className="form-control"
                           id="confirm_password"
                           required
                         />
                       </div>
                     </div>
-                    <div class="mb-4">
-                      <div class="form-check">
+                    <div className="mb-4">
+                      <div className="form-check">
                         <input
-                          class="form-check-input"
+                          className="form-check-input"
                           type="checkbox"
                           value=""
                           id="remember"
                         />{" "}
                         <label
-                          class="form-check-label fw-normal mb-0"
+                          className="form-check-label fw-normal mb-0"
                           for="remember"
                         >
                           I agree to the{" "}
-                          <a href="#" class="fw-bold">
+                          <a href="#" className="fw-bold">
                             terms and conditions
                           </a>
                         </label>
                       </div>
                     </div>
                   </div>
-                  <div class="d-grid">
-                    <button type="submit" class="btn btn-gray-800">
+                  <div className="d-grid">
+                    <button type="submit" className="btn btn-gray-800">
                       Sign up
                     </button>
                   </div>
                 </form>
-                <div class="mt-3 mb-4 text-center">
-                  <span class="fw-normal">or login with</span>
+                <div className="mt-3 mb-4 text-center">
+                  <span className="fw-normal">or login with</span>
                 </div>
-                <div class="d-flex justify-content-center my-4">
+                <div className="d-flex justify-content-center my-4">
                   <a
                     href="#"
-                    class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2"
+                    className="btn btn-icon-only btn-pill btn-outline-gray-500 me-2"
                     aria-label="facebook button"
                     title="facebook button"
                   >
                     <svg
-                      class="icon icon-xxs"
+                      className="icon icon-xxs"
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fab"
@@ -144,12 +144,12 @@ function SignUp() {
                   </a>
                   <a
                     href="#"
-                    class="btn btn-icon-only btn-pill btn-outline-gray-500 me-2"
+                    className="btn btn-icon-only btn-pill btn-outline-gray-500 me-2"
                     aria-label="twitter button"
                     title="twitter button"
                   >
                     <svg
-                      class="icon icon-xxs"
+                      className="icon icon-xxs"
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fab"
@@ -166,12 +166,12 @@ function SignUp() {
                   </a>
                   <a
                     href="#"
-                    class="btn btn-icon-only btn-pill btn-outline-gray-500"
+                    className="btn btn-icon-only btn-pill btn-outline-gray-500"
                     aria-label="github button"
                     title="github button"
                   >
                     <svg
-                      class="icon icon-xxs"
+                      className="icon icon-xxs"
                       aria-hidden="true"
                       focusable="false"
                       data-prefix="fab"
@@ -187,10 +187,10 @@ function SignUp() {
                     </svg>
                   </a>
                 </div>
-                <div class="d-flex justify-content-center align-items-center mt-4">
-                  <span class="fw-normal">
+                <div className="d-flex justify-content-center align-items-center mt-4">
+                  <span className="fw-normal">
                     Already have an account?{" "}
-                    <a href="#" class="fw-bold">
+                    <a href="#" className="fw-bold">
                       Login here
                     </a>
                   </span>

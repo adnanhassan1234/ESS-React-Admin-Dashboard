@@ -35,22 +35,22 @@ const data = [
   },
 ];
 
-const DashboardBarChart = () => {
+const DashboardBarChart = (props) => {
   return (
     <>
       <ResponsiveContainer width="100%" aspect={2}>
-        <BarChart data={data}>
+        <BarChart data={props.chartContent}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="category" />
           <YAxis />
           <Tooltip
             contentStyle={{
               backgroundColor: "rgba(0, 0, 0, 0.8)",
               color: "#FFFFFF",
               padding: "2px",
-            }}
+            }}chartData
           />
-          <Bar dataKey="blue" fill="#1F71FF" barSize={55} />
+          <Bar dataKey="price" fill="#1F71FF" barSize={40} />
         </BarChart>
       </ResponsiveContainer>
     </>

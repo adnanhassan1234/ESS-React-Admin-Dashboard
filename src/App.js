@@ -14,6 +14,7 @@ import ForgotPassword from "./pages/Auth/ForgotPassword";
 import ResetPassword from "./pages/Auth/ResetPassword";
 import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
+import Products from "./components/Products/Products";
 
 function App() {
   
@@ -35,6 +36,7 @@ function App() {
           <main class="content">
             <Routes>
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/product" element={<Products />} />
               <Route path="/chart" element={<Chart />} />
               <Route path="/card" element={<Card />} />
               <Route path="/form" element={<Form />} />

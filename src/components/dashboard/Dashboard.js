@@ -48,17 +48,85 @@ const NotificationData = [
   },
 ];
 
+
+const data = [
+  {
+    catagery :"electronics",
+    price:"1994.99",
+  },
+  {
+    catagery :"jewelery",
+    price:"1994.99",
+  },
+
+  {
+    catagery :"men's clothing",
+    price:"204",
+  },
+  {
+    catagery :"women's clothing",
+    price:"57.72",
+  },
+]
+
+const BASE_URL = "https://fakestoreapi.com/products";
+
 function Dashboard() {
 
 
   const navigate = useNavigate();
-  const [item, setItem] = useState(cardData);
+  const [chartData, setChartData] = useState([]);
+  console.log("🚀 ~ file: Dashboard.js:58 ~ Dashboard ~ chartData:", chartData)
+  const [loading, setLoading] = useState(false);
+
+  
+    const fetchProductsData = async () => {
+      try {
+        const response = await fetch(BASE_URL);
+        const data = await response.json();
+        setChartData(data);
+        setLoading(true);
+      } catch (error) {
+        console.log(error.message);
+      }
+    };
+   
 
   useEffect(() => {
+    fetchProductsData();
     if (!localStorage.getItem('accessToken')) {
       navigate('/');
     }
   }, []);
+
+  
+  const chartContent = chartData.reduce((acc, curr) => {
+    const category = curr.category;
+    const price = curr.price;
+  
+    const categoryIndex = acc.findIndex((el) => el.category === category);
+  
+    if (categoryIndex !== -1) {
+      acc[categoryIndex].price += price;
+    } else {
+      acc.push({
+        category,
+        price
+      });
+    }
+  
+    return acc;
+  }, []);
+ 
+  
+
+  if (!loading) {
+    return (
+      <div>
+        <h4>Loading...</h4>
+      </div>
+    );
+  }
 
 
   return (
@@ -69,7 +137,7 @@ function Dashboard() {
         <div className="dashboard_card my-5">
           <div className="container">
             <div className="row">
-              {item?.map((content, ind) => {
+              {cardData?.map((content, ind) => {
                 return <CardListData key={ind} {...content} />;
               })}
             </div>
@@ -80,7 +148,7 @@ function Dashboard() {
         <div className="chart_notification my-5">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6 col-12 mb-3">
+              <div className="col-lg-7 col-12 mb-3">
                 <div className="card">
                   <div className="card-header d-flex justify-content-between">
                     <div className="bar-chart">
@@ -119,11 +187,11 @@ function Dashboard() {
                     </div>
                   </div>
                   <div className="card-body p-3 ms-0">
-                    <DashboardBarChart />
+                    <DashboardBarChart chartContent={chartContent}  />
                   </div>
                 </div>
               </div>
-              <div className="col-lg-6 col-12">
+              <div className="col-lg-5 col-12">
                 {/* Notification */}
                 <div className="card">
                   <div className="card-header d-flex justify-content-between">

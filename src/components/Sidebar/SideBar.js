@@ -119,12 +119,20 @@ function SideBar() {
                 <span className="mt-1 ms-1 sidebar-text spur">Spur</span>
               </Link>
             </li>
-            <li className="nav-item active mt-4">
+            <li className="nav-item  mt-4">
               <Link className="nav-link" to={{ pathname: "/dashboard" }}>
                 <span className="sidebar-icon">
                   <i className="fa fa-home" aria-hidden="true"></i>
                 </span>
                 <span className="sidebar-text">Dashboard</span>
+              </Link>
+            </li>
+            <li className="nav-item ">
+              <Link className="nav-link" to={{ pathname: "/product" }}>
+                <span className="sidebar-icon">
+                <i className="fa fa-shopping-basket" aria-hidden="true"></i>
+                </span>
+                <span className="sidebar-text">Products</span>
               </Link>
             </li>
             <li className="nav-item">

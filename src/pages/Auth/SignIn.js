@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 const BASE_URL = "https://api.gowild.appscorridor.com/api/v1/auth/login";
 
@@ -67,6 +68,9 @@ function SignIn() {
       console.error(error);
     }
   };
+
+
+  
 
   return (
     <div className="signin-container">

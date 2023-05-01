@@ -1,7 +1,17 @@
 import { Link } from "react-router-dom";
 import "./sidebar.scss";
+import { useNavigate } from 'react-router-dom';
 
 function SideBar() {
+
+  const navigate = useNavigate();
+
+  const removeToken = () => {
+    localStorage.removeItem('accessToken');
+    navigate('/');
+    window.location.reload();
+  }
+
   return (
     <div classNameName="header-container">
       <nav className="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
@@ -47,7 +57,7 @@ function SideBar() {
                   alt="Bonnie Green"
                 />
               </div>
-              <div className="d-block">
+              <div className="d-block" onClick={removeToken}>
                 <a
                   href="#"
                   className="btn btn-secondary btn-sm d-inline-flex align-items-center"
@@ -97,7 +107,7 @@ function SideBar() {
           </div>
           <ul className="nav flex-column pt-3 pt-md-0">
             <li className="nav-item">
-              <Link to={{ pathname: "/" }} className=" d-flex align-items-center">
+              <Link to={{ pathname: "/dashboard" }} className=" d-flex align-items-center">
                 <span className="sidebar-icon">
                   <img
                     src="assets/img/light.svg"

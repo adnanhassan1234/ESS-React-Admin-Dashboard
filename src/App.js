@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
+  
   const [token, setToken] = useState("");
 
   useEffect(() => {
@@ -23,8 +24,9 @@ function App() {
     if (storedToken) {
       setToken(storedToken);
     }
-  }, []);
+  }, [token]);
 
+  
   return (
     <div className="App">
       {token ? (

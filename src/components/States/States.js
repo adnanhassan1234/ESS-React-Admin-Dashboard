@@ -1,84 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../Navbar/Navbar";
-import { useState } from "react";
 import StateCard from "./StateCard";
+import cardDataContent from "./CardData";
+import { InputLabel, Select, MenuItem, OutlinedInput } from "@material-ui/core";
+import FormControl from '@mui/material/FormControl';
 import "./state.scss";
 
-const cardData = [
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    bgColor: "#3F84FC",
-    title: "Primary",
-    price: "$100",
-    discount: "+17.5%",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Secondary",
-    bgColor: "#727E93",
-    price: "$100",
-    discount: "+17.5%",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Success",
-    price: "$100",
-    bgColor: "#1DAB47",
-    discount: "+17.5%",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Info",
-    price: "$100",
-    bgColor: "#8A3FFC",
-    discount: "+17.5%",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Warning",
-    price: "$100",
-    bgColor: "#FD7E14",
-    discount: "+17.5%",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Danger",
-    price: "$100",
-    bgColor: "#FC413F",
-    discount: "+17.5%",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Light",
-    price: "$100",
-    bgColor: "#F8F9FA",
-    discount: "+17.5%",
-    color: "#3D4044",
-  },
-  {
-    icon: <i className="fa fa-shopping-cart" aria-hidden="true"></i>,
-    title: "Dark",
-    price: "$100",
-    bgColor: "#1E232D",
-    discount: "+17.5%",
-  },
-];
-
-const whiteColor = "#fff";
 
 const States = () => {
-  const [item, setItem] = useState(cardData);
+  const [cardData, setCardData] = useState(cardDataContent);
+  const [selectedTitles, setSelectedTitles] = useState([]);
+
+  const handleChange = (event) => {
+    setSelectedTitles(event.target.value);
+  };
+
   return (
     <>
       <div className="dashboard-container">
         <Navbar />
         <section className="states my-5">
           <div className="container">
-            <h2>Stats</h2>
+            <div className="d-flex justify-content-between align-items-center">
+              <h2>Stats</h2>
+              <FormControl sx={{ m: 1, width: 300 }}>
+                <InputLabel id="demo-multiple-name-label">Select title</InputLabel>
+                <Select
+                  labelId="demo-multiple-name-label"
+                  id="demo-multiple-name"
+                  multiple
+                  value={selectedTitles}
+                  onChange={handleChange}
+                  input={<OutlinedInput />}
+                >
+                  {cardData.map((card) => (
+                    <MenuItem key={card.title} value={card.title}>
+                      {card.title}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+            </div>
             <div className="row mt-3">
-              {item?.map((content, ind) => {
-                return <StateCard key={ind} {...content} />;
-              })}
+              {cardData
+                .filter((content) => selectedTitles.includes(content.title))
+                .map((content, ind) => (
+                  <StateCard key={ind} {...content} />
+                ))}
             </div>
           </div>
         </section>

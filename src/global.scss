@@ -12,3 +12,35 @@ body {
 .recharts-text{
   text-transform: capitalize;
 }
+
+.MuiSelect-selectMenu {
+  height: auto;
+  overflow: hidden;
+  /* min-height: 1.1876em; */
+  white-space: nowrap !important;
+  text-overflow: ellipsis !important;
+}
+.MuiSelect-select.MuiSelect-select {
+  /* padding-right: 125px; */
+  /* padding: 5px 134px; */
+  width: 296px !important;
+  height: 0px !important;
+  /* border: 2px solid; */
+  border: none;
+  line-height: 14px !important;
+}
+.MuiFormControl-root {
+  border: 0;
+  margin: 0;
+  display: inline-flex;
+  padding: 0;
+  position: relative;
+  min-width: 0;
+  flex-direction: column;
+  vertical-align: top;
+  margin-left: auto !important;
+  bottom: 2px;
+}
+.MuiCheckbox-colorSecondary.Mui-checked {
+  color: blue;
+}

@@ -109,7 +109,7 @@ const Tables = () => {
                 >
                   {["Default table", "Hover table", "Striped table", "Dark table"].map((style) => (
                     <MenuItem key={style} value={style}>
-                      <Checkbox checked={selectedStyles.indexOf(style) > -1} />
+                      {/* <Checkbox checked={selectedStyles.indexOf(style) > -1} />   */}
                       <ListItemText primary={style} />
                     </MenuItem>
                   ))}

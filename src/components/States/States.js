@@ -24,7 +24,9 @@ const States = () => {
             <div className="d-flex justify-content-between align-items-center">
               <h2>Stats</h2>
               <FormControl sx={{ m: 1, width: 300 }}>
-                <InputLabel id="demo-multiple-name-label">Select title</InputLabel>
+              <InputLabel id="demo-multiple-select-label">
+                  Select title
+                </InputLabel>
                 <Select
                   labelId="demo-multiple-name-label"
                   id="demo-multiple-name"

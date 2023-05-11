@@ -40,11 +40,11 @@ const Products = () => {
         <section className="products my-5">
           <div className="container">
             <h2>All Products</h2>
-          </div>
           <div className="row mt-4">
             {product?.map((content, ind) => {
               return <ProductCard key={ind} {...content} />;
             })}
+          </div>
           </div>
         </section>
       </div>

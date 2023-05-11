@@ -19,6 +19,9 @@
     .fa {
         font-size: 22px;
     }
+    .fa-bars{
+        cursor: pointer;
+    }
 
     .input-group-text {
         background-color: transparent !important;
@@ -39,5 +42,8 @@
         margin-left: 0px !important;
         margin-right: 0px !important;
         // padding: 14px;
+        .navbar_small{
+            display: none;
+        }
     }
 }

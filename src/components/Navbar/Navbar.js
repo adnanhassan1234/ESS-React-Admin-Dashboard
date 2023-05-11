@@ -3,22 +3,30 @@ import "./navbar.scss";
 import profile from '../../assets/image/hassan.jpg';
 import { Link } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { toggleState } from "../../features/DashboardSlice";
 
 
 const Navbar = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+
+
+  const changeDashboardView = () => {
+    dispatch(toggleState())
+  }
 
   const removeToken = () => {
     localStorage.removeItem('accessToken');
-    navigate('/');
+    navigate('/sign in');
     window.location.reload();
   }
 
   return (
     <>
       <nav className="navbar navbar-top padding-0 navbar-expand navbar-dashboard navbar-dark me-0 pe-0">
-        <div className="container-fluid px-0 d-md-block d-none">
+        <div className="container-fluid navbar_small px-0">
           <div
             className="d-flex justify-content-between w-100"
             id="navbarSupportedContent"
@@ -28,7 +36,10 @@ const Navbar = () => {
                 className="navbar-search form-inline"
                 id="navbar-search-main"
               >
+               
                 <div className="input-group  input-group-merge search-bar">
+                {/* side bar icon */}
+                <i class="fa fa-bars mt-2 me-3" aria-hidden="true" style={{fontSize:'23px', color:'black'}} onClick={changeDashboardView}></i>
                   <span className="input-group-text " id="topbar-addon">
                     <i className="fa fa-search" aria-hidden="true"></i>
                   </span>

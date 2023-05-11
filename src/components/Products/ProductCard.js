@@ -13,7 +13,7 @@ const ProductCard = (content) => {
               class="card-img-top"
               alt="..."
               width={20}
-              height={150}
+             style={{height:"250px"}}
             />
             <div class="card-body p-0 my-2">
               <h5 class="card-title">{title.slice(0, 17)}..</h5>

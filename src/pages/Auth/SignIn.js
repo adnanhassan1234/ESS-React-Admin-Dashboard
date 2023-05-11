@@ -51,7 +51,7 @@ function SignIn() {
         "refreshToken",
         JSON.stringify(res.data.refreshToken)
       );
-      navigate("/dashboard");
+      navigate("/");
     } catch (error) {
       if (error) {
         toast.error("Email or Password is incorrect!", {

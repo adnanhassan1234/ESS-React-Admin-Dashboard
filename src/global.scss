@@ -53,3 +53,16 @@ body {
   left: 668px;
   transform-origin: 0px 62px;
   }
+  .mobile-screen-version{
+    margin-left: 100px !important;
+  }
+
+
+  @media (max-width: 991px) {
+    .mobile-screen-version {
+      margin-left: 0px !important;
+  }
+}
+html{
+  scroll-behavior: smooth;
+}

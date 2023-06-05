@@ -20,7 +20,7 @@ import { useSelector } from "react-redux";
 function App() {
 
   const mobileScreen = useSelector((state) => state.dashboard.mobileView);
-  console.log("🚀 ~ file: App.js:23 ~ App ~ mobileScreen:", mobileScreen)
+  // console.log("🚀 ~ file: App.js:23 ~ App ~ mobileScreen:", mobileScreen)
   
   const [token, setToken] = useState("");
 
@@ -34,11 +34,11 @@ function App() {
   
   return (
     <div className="App">
-    {
-      mobileScreen?
+    
+      
       <BrowserRouter>
           <SideBar />
-          <main class="content">
+          <main class={mobileScreen? "content": "mobile-screen-version"}>
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/product" element={<Products />} />
@@ -55,28 +55,7 @@ function App() {
             </Routes>
           </main>
         </BrowserRouter> :   
-        <BrowserRouter>
-          <SideBar />
-          <main class="mobile-screen-version">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/product" element={<Products />} />
-              <Route path="/chart" element={<Chart />} />
-              <Route path="/card" element={<Card />} />
-              <Route path="/form" element={<Form />} />
-              <Route path="/settings" element={<Setting />} />
-              <Route path="/tables" element={<Tables />} />
-              <Route path="/states" element={<States />} />
-              <Route path="/sign in" element={<SignIn />} />
-              <Route path="/sign-up" element={<SignUp />} />
-              <Route path="/forgotpassword" element={<ForgotPassword />} />
-              <Route path="/resetpassword" element={<ResetPassword />} />
-            </Routes>
-          </main>
-        </BrowserRouter>
-    }
- 
-
+  
       <ToastContainer
         position="bottom-right"
         autoClose={5000}
@@ -94,56 +73,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-
-
-
-
-// <div className="App">
-// {token ? (
-//   <BrowserRouter>
-//     <SideBar />
-//     <main class="content">
-//       <Routes>
-//         <Route path="/dashboard" element={<Dashboard />} />
-//         <Route path="/product" element={<Products />} />
-//         <Route path="/chart" element={<Chart />} />
-//         <Route path="/card" element={<Card />} />
-//         <Route path="/form" element={<Form />} />
-//         <Route path="/settings" element={<Setting />} />
-//         <Route path="/tables" element={<Tables />} />
-//         <Route path="/states" element={<States />} />
-//         <Route path="/" element={<SignIn />} />
-//         <Route path="/sign-up" element={<SignUp />} />
-//         <Route path="/forgotpassword" element={<ForgotPassword />} />
-//         <Route path="/resetpassword" element={<ResetPassword />} />
-//       </Routes>
-//     </main>
-//   </BrowserRouter>
-// ) : (
-//   <BrowserRouter>
-//     <Routes>
-//       <Route path="/" element={<SignIn />} />
-//     </Routes>
-//   </BrowserRouter>
-// )}
-
-// <ToastContainer
-//   position="bottom-right"
-//   autoClose={5000}
-//   hideProgressBar={false}
-//   newestOnTop={false}
-//   closeOnClick
-//   rtl={false}
-//   pauseOnFocusLoss
-//   draggable
-//   pauseOnHover
-//   theme="dark"
-// />
-// </div>
